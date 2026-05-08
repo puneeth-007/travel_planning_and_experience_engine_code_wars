@@ -1,6 +1,8 @@
-# Travel Experience Engine
+# Travel Planning & Experience Engine
 
-A smart, dynamic travel assistant web application. It uses a React (Vite) frontend with an Apple-inspired glassmorphism design and a Python FastAPI backend to integrate with Google Services (Gemini, Maps).
+[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/puneeth-007/travel_planning_and_experience_engine_code_wars.git)
+
+A dynamic, Apple-inspired glassmorphic travel planning assistant powered by Google Gemini and Google Maps. It uses a React (Vite) frontend with an Apple-inspired glassmorphism design and a Python FastAPI backend to integrate with Google Services (Gemini, Maps).
 
 ## Prerequisites
 
