@@ -1,8 +1,16 @@
 # Stage 1: Build the Vite React Frontend
 FROM node:18-alpine AS frontend-builder
 WORKDIR /app/frontend
-COPY frontend/package.json frontend/package-lock.json ./
+
+# Accept the Maps API key as a build argument
+ARG VITE_GOOGLE_MAPS_API_KEY=""
+ENV VITE_GOOGLE_MAPS_API_KEY=$VITE_GOOGLE_MAPS_API_KEY
+
+# Install dependencies
+COPY frontend/package.json ./
 RUN npm install
+
+# Copy frontend source and build
 COPY frontend/ ./
 RUN npm run build
 
@@ -10,7 +18,7 @@ RUN npm run build
 FROM python:3.11-slim
 WORKDIR /app
 
-# Install dependencies
+# Install Python dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
